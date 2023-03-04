@@ -13,18 +13,18 @@ function Home() {
       </div>
       <div className="home-features">
         <div className="feature">
-        <a href="https://example.com/image.jpg">View image</a>
+        {/* <a href="https://example.com/image.jpg">View image</a> */}
 
           <h2>Find Your Perfect Pet</h2>
           <p>Browse our selection of adoptable pets and find your perfect match.</p>
         </div>
         <div className="feature">
-          <img src={catImage} alt="Cat" />
+          {/* <img src={catImage} alt="Cat" /> */}
           <h2>Adopt a Pet</h2>
           <p>Give a pet a forever home and make a lifelong companion.</p>
         </div>
         <div className="feature">
-          <img src={birdImage} alt="Bird" />
+          {/* <img src={birdImage} alt="Bird" /> */}
           <h2>Support Our Mission</h2>
           <p>Support animal welfare and help us care for our animals by making a donation.</p>
         </div>
