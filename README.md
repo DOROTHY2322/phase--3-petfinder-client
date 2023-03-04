@@ -1,7 +1,7 @@
 # Phase-3-final-project-pet-finder-server
 # Description
 
-- This is a backend server for a petfinder app, it is built with ruby with sinatra.
+- This is a frontend page for a petfinder app, it is built with react.js.
 
 # Getting Started
 
