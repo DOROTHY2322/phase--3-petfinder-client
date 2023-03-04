@@ -2,6 +2,7 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Pets from './components/Pets';
 import Home from './components/Home';
+import AvailablePets from './components/AvailablePets';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
             <li>
               <Link to="/pets">Pets</Link>
             </li>
+            <li>
+              <Link to="/pets/available">Available Pets</Link>
+            </li>
           </ul>
         </nav>
 
@@ -23,6 +27,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/pets" element={<Pets />} />
+              <Route path="/pets/available" element={<AvailablePets />} />
             </Routes>
           </div>
         </div>
@@ -34,4 +39,5 @@ function App() {
     </Router>
   );
 }
+
 export default App;
