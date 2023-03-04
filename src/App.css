@@ -17,29 +17,28 @@
   margin-bottom: 20px;
   max-width: 300px;
 }
+.pets-container {
+  width: 100%;
+}
 
-        .pets-container {
-          width: 100%;
-        }
+.pet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
 
-        .pet-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 1rem;
-        }
+.pet {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+}
 
-        .pet {
-          background-color: #fff;
-          border-radius: 8px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          padding: 1rem;
-          text-align: center;
-        }
-
-        .pet img {
-          max-width: 100%;
-          height: auto;
-        }
+.pet img {
+  max-width: 100%;
+  height: auto;
+}
 
 .home-container {
   display: flex;
