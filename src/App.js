@@ -4,6 +4,9 @@ import Pets from './components/Pets';
 import Home from './components/Home';
 import SearchForm from './components/SearchForm';
 import AddPetForm from './components/AddPetForm';
+import SignupForm from './components/SignupForm';
+import LoginForm from './components/LoginForm';
+
 
 function App() {
   return (
@@ -23,6 +26,12 @@ function App() {
             <li>
               <SearchForm />
             </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/signup">Sign Up</Link>
+            </li>
           </ul>
         </nav>
 
@@ -32,6 +41,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/pets" element={<Pets />} />
               <Route path="/add-pet" element={<AddPetForm />} />
+              <Route path="/login" element={<LoginForm />} />
+              <Route path="/signup" element={<SignupForm />} />
             </Routes>
           </div>
         </div>
