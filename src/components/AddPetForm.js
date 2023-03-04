@@ -9,7 +9,7 @@ function AddPetForm({ onAddPet }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const newPet = { name, breed, age, img_url: imgUrl };
-
+// it adds a pets but the pets doesnt persists.
     fetch('https://dorothy-sinatra-petfinder.onrender.com/pets', {
       method: 'POST',
       headers: {
