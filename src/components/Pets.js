@@ -10,20 +10,36 @@ function Pets() {
       .catch((error) => console.error(error));
   }, []);
 
+  const handleDelete = (id) => {
+    fetch(`https://dorothy-sinatra-petfinder.onrender.com/pets/${id}`, {
+      method: 'DELETE',
+    })
+      .then((response) => response.json())
+      .then(() => {
+        const updatedPets = pets.filter((pet) => pet.id !== id);
+        setPets(updatedPets);
+      })
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div className="pets-container">
       <h1>List of Pets</h1>
+      <div className="pet-grid">
       {pets.map((pet) => (
-        <div className="pet" key={pet.id}>
-          <h2>{pet.name}</h2>
-          <img src={pet.img_url} alt={pet.name} />
-          <p>Species: {pet.species}</p>
-          <p>Breed: {pet.breed}</p>
-        </div>
-      ))}
+        <div className="pet-card" key={pet.id}>
+          {pet.img_url && (
+            <img className="pet-image" src={pet.img_url} alt={pet.name} />
+          )}
+          <h2 className="pet-name">{pet.name}</h2>
+          <p className="pet-info">Breed: {pet.breed}</p>
+          <p className="pet-info">Age: {pet.age}</p>
+            <button onClick={() => handleDelete(pet.id)}>Delete</button>
+          </div>
+        ))}
+      </div>
     </div>
   );
-  
 }
 
 export default Pets;
