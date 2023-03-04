@@ -26,20 +26,20 @@ function SignupForm({ onSignup }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <form className="signup-form" onSubmit={handleSubmit}>
+      <label className="signup-form__label">
         Name:
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+        <input className="signup-form__input" type="text" value={name} onChange={(e) => setName(e.target.value)} />
       </label>
-      <label>
+      <label className="signup-form__label">
         Email:
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input className="signup-form__input" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
       </label>
-      <label>
+      <label className="signup-form__label">
         Password:
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <input className="signup-form__input" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
       </label>
-      <button type="submit">Sign up</button>
+      <button className="signup-form__button" type="submit">Sign up</button>
     </form>
   );
 }
