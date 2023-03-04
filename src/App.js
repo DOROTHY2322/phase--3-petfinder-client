@@ -1,8 +1,3 @@
-import './App.css'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Pets from './components/Pets';
-import Home from './components/Home';
-
 function App() {
   return (
     <Router>
@@ -34,5 +29,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;
