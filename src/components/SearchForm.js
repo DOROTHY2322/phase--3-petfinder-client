@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
 function SearchForm() {
   const [query, setQuery] = useState('');
   const [pets, setPets] = useState([]);
@@ -12,7 +13,7 @@ function SearchForm() {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`/pets/search?q=${query}`)
+    fetch(`https://dorothy-sinatra-petfinder.onrender.com/pets/search?q=${query}`)
       .then((res) => res.json())
       .then((data) => {
         setPets(data);
@@ -23,14 +24,14 @@ function SearchForm() {
   };
 
   return (
-    <form onSubmit={handleSearchSubmit}>
-      <input type="text" value={query} onChange={handleQueryChange} />
-      <button type="submit">Search</button>
+    <form onSubmit={handleSearchSubmit} className="search-form">
+      <input type="text" value={query} onChange={handleQueryChange} className="search-input" />
+      <button type="submit" className="search-button">Search</button>
       {pets.length > 0 && (
-        <ul>
+        <ul className="search-results">
           {pets.map((pet) => (
             <li key={pet.id}>
-              <Link to={`/pets/${pet.id}`}>{pet.name}</Link>
+              <Link to={`/pets/${pet.id}`} className="search-result-link">{pet.name}</Link>
             </li>
           ))}
         </ul>

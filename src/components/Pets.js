@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import AddPetForm from './AddPetForm';
 
 function Pets() {
   const [pets, setPets] = useState([]);
@@ -10,30 +11,32 @@ function Pets() {
       .catch((error) => console.error(error));
   }, []);
 
-  const handleDelete = (id) => {
-    fetch(`https://dorothy-sinatra-petfinder.onrender.com/pets/${id}`, {
-      method: 'DELETE',
-    })
-      .then((response) => response.json())
-      .then(() => {
-        const updatedPets = pets.filter((pet) => pet.id !== id);
-        setPets(updatedPets);
-      })
-      .catch((error) => console.error(error));
+  const handleDelete = async (id) => {
+    try {
+      await fetch(`https://dorothy-sinatra-petfinder.onrender.com/pets/${id}`, {
+        method: 'DELETE',
+      });
+      setPets((prevPets) => prevPets.filter((pet) => pet.id !== id));
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleAddPet = (pet) => {
+    setPets((prevPets) => [...prevPets, pet]);
   };
 
   return (
     <div className="pets-container">
       <h1>List of Pets</h1>
+      <AddPetForm onAddPet={handleAddPet} />
       <div className="pet-grid">
-      {pets.map((pet) => (
-        <div className="pet-card" key={pet.id}>
-          {pet.img_url && (
-            <img className="pet-image" src={pet.img_url} alt={pet.name} />
-          )}
-          <h2 className="pet-name">{pet.name}</h2>
-          <p className="pet-info">Breed: {pet.breed}</p>
-          <p className="pet-info">Age: {pet.age}</p>
+        {pets.map((pet) => (
+          <div className="pet-card" key={pet.id}>
+            {pet.img_url && <img className="pet-image" src={pet.img_url} alt={pet.name} />}
+            <h2 className="pet-name">{pet.name}</h2>
+            <p className="pet-info">Breed: {pet.breed}</p>
+            <p className="pet-info">Age: {pet.age}</p>
             <button onClick={() => handleDelete(pet.id)}>Delete</button>
           </div>
         ))}
