@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Great+Vibes&family=Lora:ital,wght@1,700&family=MonteCarlo&family=Smokum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Great+Vibes&family=Lora:ital,wght@1,700&family=MonteCarlo&family=Smokum&family=Tilt+Prism&display=swap');
 .pet {
   border: 1px solid black;
   margin-bottom: 10px;
@@ -117,6 +117,7 @@ font-family: 'Great Vibes', cursive;
 font-family: 'Lora', serif;
 font-family: 'MonteCarlo', cursive;
 font-family: 'Smokum', cursive;
+font-family: 'Tilt Prism', cursive;
 }
 
 /* Center the main content */
