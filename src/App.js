@@ -24,6 +24,9 @@ function App() {
               <Link to="/add-pet">Add Pet</Link>
             </li>
             <li>
+              <Link to="/available-pet">My pets</Link>
+            </li>
+            <li>
               <SearchForm />
             </li>
             <li>
@@ -41,6 +44,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/pets" element={<Pets />} />
               <Route path="/add-pet" element={<AddPetForm />} />
+              <Route path="/available-pet" element={<Pets />} />
               <Route path="/login" element={<LoginForm />} />
               <Route path="/signup" element={<SignupForm />} />
             </Routes>

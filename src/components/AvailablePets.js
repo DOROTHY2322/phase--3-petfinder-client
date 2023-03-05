@@ -10,6 +10,23 @@ function AvailablePets() {
       .catch(error => console.error(error));
   }, []);
 
+  const handleAdopt = (petId) => {
+    fetch(`https://dorothy-sinatra-petfinder.onrender.com/pets/${petId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ status: 'adopted' })
+    })
+    .then(response => response.json())
+    .then(data => {
+      // update the list of pets with the adopted pet removed
+      const updatedPets = pets.filter(pet => pet.id !== petId);
+      setPets(updatedPets);
+    })
+    .catch(error => console.error(error));
+  };
+
   return (
     <div className="available-pets">
       <h1>Available Pets</h1>
@@ -21,6 +38,7 @@ function AvailablePets() {
               <h2>{pet.name}</h2>
               <p>Breed: {pet.breed}</p>
               <p>Age: {pet.age}</p>
+              <button onClick={() => handleAdopt(pet.id)}>Adopted</button>
             </div>
           </li>
         ))}
@@ -28,5 +46,6 @@ function AvailablePets() {
     </div>
   );
 }
+
 
 export default AvailablePets;
