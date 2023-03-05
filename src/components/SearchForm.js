@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 function SearchForm() {
   const [query, setQuery] = useState('');
@@ -34,19 +35,24 @@ function SearchForm() {
     <div>
       <form onSubmit={handleSearchSubmit} className="search-form">
         <input type="text" value={query} onChange={handleQueryChange} className="search-input" />
-        <button type="submit" className="search-button">Search</button>
+        <button type="submit" className="search-button">
+          <FontAwesomeIcon icon={faSearch} className="search-icon" />
+        </button>
       </form>
       {error && (
-        <p className="error-message">{error}</p>
-      )}
-      {pet && (
-        <div className="pet-card" key={pet.id}>
-        {pet.img_url && <img className="pet-image" src={pet.img_url} alt={pet.name} />}
-        <h2 className="pet-name">{pet.name}</h2>
-        <p className="pet-info">Breed: {pet.breed}</p>
-        <p className="pet-info">Age: {pet.age}</p>
+        <div className="error-message">
+          <p>{error}</p>
         </div>
       )}
+      {/* {pet && (
+        <div className="pet-card" key={pet.id}>
+          {pet.img_url && <img className="pet-image" src={`${pet.img_url}?${Math.random()}`} alt={pet.name} />}
+
+          <h2 className="pet-name">{pet.name}</h2>
+          <p className="pet-info">Breed: {pet.breed}</p>
+          <p className="pet-info">Age: {pet.age}</p>
+        </div>
+      )} */}
     </div>
   );
 }

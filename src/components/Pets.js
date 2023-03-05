@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import AddPetForm from './AddPetForm';
+// import AddPetForm from './AddPetForm';
 
 function Pets() {
   const [pets, setPets] = useState([]);
@@ -49,7 +49,7 @@ function Pets() {
     <div className="pets-container">
       <h1>List of Pets</h1>
       {error && <div className="error">{error}</div>}
-      <AddPetForm onAddPet={handleAddPet} />
+      {/* <AddPetForm onAddPet={handleAddPet} /> */}
       <div className="pet-grid">
         {pets.map((pet) => (
           <div className="pet-card" key={pet.id}>
