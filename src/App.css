@@ -19,7 +19,21 @@
   max-width: 300px;
 }
 .pets-container {
-  width: 100%;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 1rem;
+}
+
+.pet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.pet-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 4px
 }
 
 .pet-grid {
@@ -46,7 +60,7 @@
   padding: 1rem;
 }
 .home-container {
-  background-image: url('https://raw.githubusercontent.com/DOROTHY2322/phase--3-petfinder-client/main/public/background.jpg');
+  background-image: url('https://raw.githubusercontent.com/DOROTHY2322/phase--3-petfinder-client/main/public/new.jpg');
   background-size: cover;
   background-position: center;
 }

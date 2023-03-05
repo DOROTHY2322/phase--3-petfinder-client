@@ -4,7 +4,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 function SearchForm() {
   const [query, setQuery] = useState('');
-  const [pet, setPet] = useState(null);
+  const [pets, setPets] = useState([]);
   const [error, setError] = useState(null);
 
   const handleQueryChange = (e) => {
@@ -18,10 +18,10 @@ function SearchForm() {
       .then((res) => res.json())
       .then((data) => {
         if (data.length > 0) {
-          setPet(data[0]);
+          setPets(data);
           setError(null);
         } else {
-          setPet(null);
+          setPets([]);
           setError('No pets found for this search query.');
         }
       })
@@ -34,7 +34,7 @@ function SearchForm() {
   return (
     <div>
       <form onSubmit={handleSearchSubmit} className="search-form">
-        <input type="text" value={query} onChange={handleQueryChange} className="search-input" />
+        <input type="text" value={query} onChange={handleQueryChange} className="search-input" placeholder="Search for pets" />
         <button type="submit" className="search-button">
           <FontAwesomeIcon icon={faSearch} className="search-icon" />
         </button>
@@ -44,15 +44,13 @@ function SearchForm() {
           <p>{error}</p>
         </div>
       )}
-      {/* {pet && (
-        <div className="pet-card" key={pet.id}>
-          {pet.img_url && <img className="pet-image" src={`${pet.img_url}?${Math.random()}`} alt={pet.name} />}
-
-          <h2 className="pet-name">{pet.name}</h2>
-          <p className="pet-info">Breed: {pet.breed}</p>
-          <p className="pet-info">Age: {pet.age}</p>
+      {pets.length > 0 && (
+        <div className="pet-grid">
+          {pets.map((pet) => (
+            <img className="pet-image" key={pet.id} src={`${pet.img_url}?${Math.random()}`} alt={pet.name} />
+          ))}
         </div>
-      )} */}
+      )}
     </div>
   );
 }
