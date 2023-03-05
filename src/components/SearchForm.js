@@ -45,13 +45,10 @@ function SearchForm() {
         </div>
       )}
       {pets.length > 0 && (
-        <div>
-          <h2>Search results for: {query}</h2>
-          <div className="pet-grid">
-            {pets.map((pet) => (
-              <img className="pet-image" key={pet.id} src={`${pet.img_url}?${Math.random()}`} alt={pet.name} />
-            ))}
-          </div>
+        <div className="pet-grid">
+          {pets.map((pet) => (
+            <img className="pet-image" key={pet.id} src={`${pet.img_url}?${Math.random()}`} alt={pet.name} />
+          ))}
         </div>
       )}
     </div>
