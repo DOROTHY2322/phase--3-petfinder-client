@@ -13,16 +13,18 @@ function SearchForm() {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-
+  
     fetch(`https://dorothy-sinatra-petfinder.onrender.com/pets/search?q=${query}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.length > 0) {
           setPets(data);
           setError(null);
+          alert(`We found ${data.length} pets for your search query!`);
         } else {
           setPets([]);
           setError('No pets found for this search query.');
+          alert('No pets found for your search query.');
         }
       })
       .catch((error) => {
@@ -30,7 +32,6 @@ function SearchForm() {
         setError('An error occurred while searching for pets. Please try again later.');
       });
   };
-
   return (
     <div>
       <form onSubmit={handleSearchSubmit} className="search-form">
