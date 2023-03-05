@@ -47,5 +47,4 @@ function AvailablePets() {
   );
 }
 
-
 export default AvailablePets;
