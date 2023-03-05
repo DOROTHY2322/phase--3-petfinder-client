@@ -8,7 +8,7 @@ function Home() {
         <h1>Welcome to Pet Finder!</h1>
         <p>Find your perfect furry friend today.</p>
         <Link to="/pets" className="btn btn-primary">
-          See Our Pets
+          See Available Pets
         </Link>
       </div>
       <div className="home-features">
