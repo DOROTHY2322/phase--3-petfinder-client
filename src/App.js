@@ -12,9 +12,9 @@ function App() {
   return (
     <Router>
       <div>
-        <nav>
+        <nav className='navbar'>
           <ul>
-            <li>
+            <li className='logo'>
               <Link to="/">PetClub</Link>
             </li>
             <li>

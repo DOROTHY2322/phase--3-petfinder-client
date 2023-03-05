@@ -8,7 +8,7 @@ function SignupForm({ onSignup }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch('/signup', {
+    const response = await fetch('https://dorothy-sinatra-petfinder.onrender.com/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
