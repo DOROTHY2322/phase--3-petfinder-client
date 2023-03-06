@@ -64,18 +64,33 @@
 
             - npm start  
 
-- we need a router so install:
+# Client-Side Routing
+To make use of Routing like in our case you will need to install a npm dependency for routing.
 
-        - npm install react-router-dom
+To install the npm dependency.
+
+     - npm install react-router-dom
+
+# Hosting the page on vercel App
+After creting the project in which we have done so.
+
+we are using an application called vercel to deploy our page.
+
+on the vercel application on your right choose
+
+Add New Project
+
+choose the repository you wish to deploy
+
+To acces the live page:
+
+     https://phase-3-petfinder-client.vercel.app
 
 - Backend Repository
 
         - https://github.com/DOROTHY2322/Phase-3-final-project-pet-finder-server
 
- - Our frontend has a frontend live page to access:
-
-         -  https://phase-3-petfinder-client.vercel.app
-          
+ 
 
 # Technologies used
 
